@@ -1,0 +1,45 @@
+<!--наследование от файла layout-->
+{% extends 'helper/layout.html' %}
+
+{% block content %}
+
+<!--Главный контейнер-->
+<div style="margin-top: 50px;" class="ui container">
+        <h1 class="ui center aligned header">Your organizer</h1>
+        <h3 class="test_style">If you forget something, don't worry, I'll remind you</h3>
+<!--        ссылаемся на представление add, метод post используем при добавлении-->
+        <form class="ui form" action="{% url '_add' %}" method="post">
+<!--                защита форм от межсайтовых запросов, обязательно используется в форме при добавлении и обновлении информации-->
+                {% csrf_token %}
+                <div class="field">
+                        <label>New task</label>
+<!--                        то, что вводим в форму, отдаётся в title и переходит функции _add (request.POST['title']) и-->
+<!--                        добавляется в DB-->
+                        <input type="text" name="title" placeholder="Enter the name of the task"><br>
+                </div>
+                <button class="ui teal basic button" type="submit">Add</button>
+        </form>
+
+
+<!--бурём все тудушки из туду-листа-->
+{% for todo in todo_list %}
+<div class="ui segment">
+        <!--заголовок-->
+        <p class="ui big header">№{{ todo.id }} {{ todo.title }}</p>
+
+<!--        если не завершено-->
+        {% if todo.is_complete == False %}
+        <span class="ui gray label">Not completed</span>
+<!--        Но есть возможность закрыть. Обращаемся к функции во view, id тудушки получаем из цикла -->
+        <a class="ui primary basic button" href="{% url '_update' todo_id=todo.id %}">Close</a>
+        {% else %}
+<!--        усли завершено, также есть возможность снова открыть-->
+        <span class="ui green label">Completed</span>
+        <a class="ui blue button" href="{% url '_update' todo_id=todo.id %}">Open</a>
+        {% endif %}
+        <a class="ui negative basic button" href="{% url '_delete' todo_id=todo.id %}">Delete</a>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
