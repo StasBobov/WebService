@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-umh4az*m2-p)odv3j2m!(g2=yugvw^+mi$5#p@c2xp-%fm8zsm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# перед залитием в продакшн вписать туда свой хост
 ALLOWED_HOSTS = []
 
 
@@ -124,10 +125,10 @@ USE_TZ = True
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
 # Абсолютный путь к каталогу статики, в котором с помощью python manage.py collectstatic
 # будут собираться статические файлы.
-STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL)
+# STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL)
 
 
 # Default primary key field type
