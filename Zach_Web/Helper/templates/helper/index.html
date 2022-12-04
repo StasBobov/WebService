@@ -1,105 +1,98 @@
-<!--Декларация определяет этот документ как HTML5-->
 <!DOCTYPE html>
 {% load static %}
-<!--элемент является корневым элементом HTML-страницы-->
 <html>
-<!--элемент содержит мета-информацию о документе-->
-    <head>
-<!-- элемент задает заголовок документа-->
-        <title>Zach Helper</title>
-<!-- элемент должен определить кодировку UTF-8-->
-        <meta charset="UTF-8">
-<!-- элемент с именем = "видовой экран" делает веб-сайт хорошо выглядеть на всех устройствах и разрешение экрана-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-</style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--      добавил по ссылке шрифты с гугла-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/abf2dbea94.js" crossorigin="anonymous"></script>
-    <!--        ЗАРАБОТАЛО!!!!-->
-    <link rel="stylesheet" href='{% static "css/my_css.css" %}' />
+<head>
+    <meta charset="utf-8">
+    <title>Zach Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--    bootstrap3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href='{% static "css/main.css" %}' />
 </head>
-
-<!--элемент содержит видимое содержимое страницы-->
 <body>
-<!--Заголовок обычно находится в верхней части веб-сайта-->
-<!--элемент определяет большой заголовок-->
-    <nav class="navbar navbar-expand navbar - light" style="background-color: #778899;">
+
+ <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-           <div class="navbar-header">
+          <div class="navbar-header">
           <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-<!--          горизонтальные линии-->
-          <span class="=icon-bar"></span>
-          <span class="=icon-bar"></span>
-          <span class="=icon-bar"></span>
-        </button>
-         <h4><span class="badge bg-dark">Zach</span></h4>
+            <span class="=icon-bar"></span>
+            <span class="=icon-bar"></span>
+            <span class="=icon-bar"></span>
+          </button>
+
+<!--              TODO выровнять и вставить лого-->
+        <h3><span class="label label-default">Zach</span></h3>
+
+
       </div>
+          <form class="navbar-form navbar-left">
+              <div class="form-group">
+                  <button type="submit" class="btn btn-secondary">Home</button>
+              </div>
+          </form>
 
+                <form class="navbar-form navbar-right" method="post">
+                    {% csrf_token %}
+                     <div class="form-group">
+                         <input type="text" placeholder="Email" class="form-control">
+                     </div>
+                     <div class="form-group">
+                          <input type="password" placeholder="Password" class="form-control">
+                     </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-secondary">Sign-up</button>
+        </form>
+      </div>
+     </div>
 
-<!--        меню гамбургера, у нас скрыта, открывается, когда сворачивается сайт по размеру-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-<!--        сворачиваемая область меню-->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<!--ms-auto - размещает справа, me - слева-->
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <button type="button" class="btn btn-outline-light">Home</button>
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-<!--dropdown - выпадающий список-->
-                  <li class="nav-item dropdown">
-<!-- data-toggle="dropdown" - родитель для выпадающего пункта меню-->
-
-                      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page"
-                         href="#"><i class="fa-regular fa-user"></i></a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Sign-up</a>
-                      <a class="dropdown-item" href="#">Login</a>
-                </div>
-                </li>
-    <!--              значок search-->
-                  <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </li>
-              </ul>
-
-
+      <div class="jumbotron">
+        <div class="container">
+             <h3>How it works</h3>
+             <p><a href="#" class="btn btn-primary btn-md">Learn More &raquo;</a> </p>
         </div>
-      </div>
-    </nav>
-<!--<div class="header">-->
+        </div>
 
-<!--    <h3>Zach</h3>-->
-<!--&lt;!&ndash;элемент определяет абзац&ndash;&gt;-->
-<!--    <p>Your personal helper</p>-->
-<!--&lt;!&ndash; Панель навигации содержит список ссылок,&ndash;&gt;-->
-<!--    <div class="navbar">-->
-<!--      <a href="#">Home</a>-->
-<!--      <a href="#" class="right">Sign-up</a>-->
-<!--        <a href="#" class="right">Login</a>-->
-<!--        <a href="#" class="right">Search</a>-->
-<!--</div>-->
+  <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mx-auto" style="background-color: #FFFFFF">
+                 <form action="/organizer" target="_blank">
+                        <button class="btn btn-primary btn-md btn-block">Organizer</button>
+                   </form>
+                 <a href="/organizer"><img src="https://picshare.ru/uploads/221128/b7zmS2n24x.jpg" class="img-thumbnail" alt=""></a>
+            </div>
 
-<!--</div>-->
-<!--макет из 2 столбцов, разделенный на "боковое содержимое" и "основное содержимое".-->
-    <div class="row">
-      <div class="side">...</div>
-      <div class="main">...</div>
+            <div class="col-md-3 my-auto" style="background-color: #FFFFFF">
+                 <form action="/projects" target="_blank">
+                        <button class="btn btn-primary btn-md btn-block">Projects</button>
+                   </form>
+                <a href="/projects"><img src="https://picshare.ru/uploads/221128/CkFsZ8n4B7.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+
+
+              <div class="col-md-3" style="background-color: #FFFFFF">
+                   <form action="/add" target="_blank">
+                        <button class="btn btn-primary btn-md btn-block">Add new</button>
+                   </form>
+                  <a href="/add"><img src="https://picshare.ru/uploads/221128/E99Tae56Lg.jpg" class="img-thumbnail" alt=""></a>
+              </div>
+
+              <div class="col-md-3" style="background-color: #FFFFFF">
+                  <form action="/settings" target="_blank">
+                        <button class="btn btn-primary btn-md btn-block">Settings</button>
+                   </form>
+                <a href="/settings"><img src="https://picshare.ru/uploads/221128/697kL0vVvc.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+        </div>
     </div>
-    <div class="footer">
-      <h2>Footer</h2>
-</div>
+
+
+
+
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

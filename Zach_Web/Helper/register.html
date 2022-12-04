@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <p></p>
+<!--    если action пустой, то это означает, что обработка формы идёт на этой же странице/method="post"
+потому-что отправляем данные на сервер/(% csfr_token %) - всегда крепим при использовании метода post-->
+        <form action="" method="post">(% csfr_token %)
+<!--отображаем форму, как параграф-->
+            {{form.as_p}}
+            <!--as_p для того, чтобы каждый элемент формы был с новой строки-->
+
+            <button type="submit">Sing-up</button>
+        </form>
+</body>
+</html>

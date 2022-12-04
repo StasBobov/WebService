@@ -1,68 +1,91 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Bootstrap уроки</title>
+    <meta charset="utf-8">
+    <title>Add new</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    bootstrap3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <style>
-    body {
-      padding: 30px;
-    }
-  </style>
+
+    <link rel="stylesheet" href='{% static "css/main.css" %}' />
 </head>
 <body>
-  <button class="btn btn-default">Стандартная</button>
-  <input type="submit" class="btn btn-primary" value="Основная">
-  <input type="button" class="btn btn-success" value="Подтвердить">
-  <a href="#" class="btn btn-info" role="button">Уведомление</a>
-  <button class="btn btn-warning">Внимание</button>
-  <button class="btn btn-danger">Отмены</button>
-  <button class="btn btn-link">Сслыка</button>
-  <br><br>
-  <button class="btn btn-default btn-lg">Кнопка</button>
-  <button class="btn btn-default btn-md">Кнопка</button>
-  <button class="btn btn-default btn-sm">Кнопка</button>
-  <button class="btn btn-default btn-xs">Кнопка</button>
-  <br><br>
-  <button class="btn btn-success btn-md btn-block">Кнопка</button>
-  <br><br>
-  <button class="btn btn-default btn-lg active">Кнопка</button>
-  <button class="btn btn-default btn-lg disabled">Кнопка</button>
-  <br><br>
-  <div class="btn-group">
-    <div class="btn-group btn-group-md" data-toggle="buttons">
-      <label class="btn btn-primary">
-        <input type="checkbox"> Параметр 1
-      </label>
-      <label class="btn btn-primary">
-        <input type="checkbox"> Параметр 2
-      </label>
-      <label class="btn btn-primary">
-        <input type="checkbox"> Параметр 3
-      </label>
+
+ <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+          <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="=icon-bar"></span>
+            <span class="=icon-bar"></span>
+            <span class="=icon-bar"></span>
+          </button>
+
+<!--              TODO выровнять и вставить лого-->
+        <h3><span class="label label-default">Zach</span></h3>
+
+
+      </div>
+          <form class="navbar-form navbar-left">
+              <div class="form-group">
+                  <button type="submit" class="btn btn-secondary">Home</button>
+              </div>
+          </form>
+
+                <form class="navbar-form navbar-right">
+                     <div class="form-group">
+                         <input type="text" placeholder="Email" class="form-control">
+                     </div>
+                     <div class="form-group">
+                          <input type="password" placeholder="Password" class="form-control">
+                     </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-secondary">Sign-up</button>
+        </form>
+      </div>
+     </div>
+
+      <div class="jumbotron">
+        <div class="container">
+             <h3>How it works</h3>
+             <p><a href="#" class="btn btn-primary btn-md">Learn More &raquo;</a> </p>
+        </div>
+        </div>
+
+  <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mx-auto" style="background-color: #FFFFFF">
+                <button class="btn btn-primary btn-md btn-block">Organizer</button>
+                 <a href="#"><img src="https://picshare.ru/uploads/221128/b7zmS2n24x.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+
+            <div class="col-md-3 my-auto" style="background-color: #FFFFFF">
+                <button class="btn btn-primary btn-md btn-block">Projects</button>
+                <a href="#"><img src="https://picshare.ru/uploads/221128/CkFsZ8n4B7.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+
+
+              <div class="col-md-3" style="background-color: #FFFFFF">
+                  <button class="btn btn-primary btn-md btn-block">Add new</button>
+                  <a href="#"><img src="https://picshare.ru/uploads/221128/E99Tae56Lg.jpg" class="img-thumbnail" alt=""></a>
+              </div>
+              <div class="col-md-3" style="background-color: #FFFFFF">
+                  <button class="btn btn-primary btn-md btn-block">Settings</button>
+                <a href="#"><img src="https://picshare.ru/uploads/221128/697kL0vVvc.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+        </div>
     </div>
 
-    <div class="btn-group-vertical btn-group-md" data-toggle="buttons">
-      <label class="btn btn-primary">
-        <input type="radio"> Параметр 1
-      </label>
-      <label class="btn btn-primary">
-        <input type="radio"> Параметр 2
-      </label>
-      <label class="btn btn-primary">
-        <input type="radio"> Параметр 3
-      </label>
-    </div>
 
-  </div>
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

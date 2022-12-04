@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap уроки</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+
+<!--data-toggle="modal" говорит о том, что при нажатии на кнопку будет открыто модальное окно/
+data-target="#myModal-какой блок будет открыть в виде всплывающего окна-->
+<button class="btn btn-info" data-toggle="modal" data-target="#myModal">Вспывающее окно</button>
+<!--блок, который будет открываться-id="myModal"/class="modal-блок является модальным(всплывающим)/
+fade-плавное появление блока/tabindex="-1 - закрывает окно нажатием esc-->
+<div id="myModal" class="modal fade" tabindex="-1">
+<!--    modal-dialog-устанавливает ширину и отступы модального окна/modal-lg(большой) и по умолчанию-->
+  <div class="modal-dialog modal-sm">
+<!--      modal-content-добавляет тени и границы-->
+    <div class="modal-content">
+<!--        шапка модального окна-->
+      <div class="modal-header">
+<!--кнопка, которая будет закрывать м.о./"close" делает сверху справа значёк/data-dismiss="modal"-атрибут позволяет кнопке закрывать окно-->
+        <button class="close" data-dismiss="modal">х</button>
+        <h4 class="modal-title">Заголовок окна</h4>
+      </div>
+<!--        основная часть всплывающего блока-->
+      <div class="modal-body">Некий текст уведомления</div>
+<!--        подвал м.окна-->
+      <div class="modal-footer">
+<!--          ещё одна кнопка закрытия-->
+        <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--при помощи jquery при открытии страницы - открывается модальное окно/modal() в скобках может быть ничего, show, hide/
+on('hidden.bs.modal' или show.bs.modal или hide.bs.modal- в зависимости от действий всплывает модальное окно дополнительное-->
+<script>
+  $('#myModal').modal("toggle");
+
+  $('#myModal').on('hidden.bs.modal', function (event) {
+  // функции
+  alert ("Выполенно");
+  });
+</script>

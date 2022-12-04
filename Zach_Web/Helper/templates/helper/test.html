@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap уроки</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+
+<!--создаём в блоке класс шапки/navbar-inverse-чтобы шапка приобрела цвета/
+navbar-fixed-top-чтобы шапка была прикреплена к верхушке сайта-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+<!--    контейнер с шапкой шапки-->
+    <div class="container">
+<!--      название сайта и кнопка , появляющаяся при сжатии сайта на мобильных устройствах-->
+      <div class="navbar-header">
+<!--        та самая кнопка/data-toggle="collapse"-сворачивание, разворачивание/
+data-target=".navbar-collapse"-элемент, который будем открывать при нажатии-->
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<!--          горизонтальные линии-->
+          <span class="=icon-bar"></span>
+          <span class="=icon-bar"></span>
+          <span class="=icon-bar"></span>
+        </button>
+<!--        название сайта, брэнд-->
+        <a class="navbar-brand" href="#">Zach</a>
+      </div>
+
+<!--      блок с формами/"navbar-collapse" чтобы он мог раскрываться при сжатии/
+collapse-чтобы открывался только при нажатии-->
+      <div class="navbar-collapse collapse">
+<!--        navbar-form-класс для форм/navbar-right-чтобы находился справа-->
+        <form class="navbar-form navbar-right">
+<!--          объединяет формы, чтобы на разных устройствах сохранялось позиционирование друг с другом-->
+          <div class="form-group">
+<!--            form-control делает из инпута красивое поле ввода-->
+            <input type="text" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+<!--            type="password-->
+            <input type="password" placeholder="Password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Enter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!--отдельный блок-->
+  <div class="jumbotron">
+    <div class="container">
+<!--      заголовок первого уровня-->
+      <h1>Hello, World!</h1>
+<!--      <p> - абзац-->
+      <p>
+        mdosipifc,nspdiuchfupsieufbn,vpesifrns,pi,nvfpi
+      </p>
+<!--      &raquo - стрелочка вправо-->
+      <p><a href="#" class="btn btn-primary btn-lg">Learn More &raquo;</a> </p>
+    </div>
+  </div>
+
+<!--создаём контейнер с блоками-->
+  <div class="container">
+<!--    система сеток-->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Header</h2>
+        <p>Lorem ;mds[pcjcdjms[oizmc[ioimfc[d'</p>
+         <p><a href="#" class="btn btn-default">Learn More &raquo;</a> </p>
+      </div>
+        <div class="col-md-4">
+        <h2>Header 2</h2>
+        <p>Lorem ;mds[pcjcdjms[oizmc[ioimfc[d'</p>
+         <p><a href="#" class="btn btn-default">Learn More &raquo;</a> </p>
+      </div>
+        <div class="col-md-4">
+        <h2>Header 3</h2>
+        <p>Lorem ;mds[pcjcdjms[oizmc[ioimfc[d'</p>
+         <p><a href="#" class="btn btn-default">Learn More &raquo;</a> </p>
+      </div>
+    </div>
+<!--    горизонтальная линия-->
+    <hr>
+<!--    подвал/&copy; - цэшка-->
+    <footer>
+      <p>&copy; All rights reserved 2022</p>
+    </footer>
+  </div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--скрипт нужен для того, чтобы ссылка с подсказкой работала правильно/
+[data-toggle="tooltip"]-при наведении на эти элементы будут отображаться подсказки(применяться функция tooltip ())
+если перед скобкой добавить a, то сработает для всех кроме кнопки-->
+<script>
+  $(document).ready (function (){
+    $('[data-toggle="tooltip"]').tooltip ();
+  });
+</script>
+
+</body>
+</html>

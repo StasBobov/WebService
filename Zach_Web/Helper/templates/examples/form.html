@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--класс container как-то центрует форму посреди экрана-->
+    <div class="container">
+    <!--создаём форму-->
+        <form role="form">
+        <!--    каждое поле в отдельном блоке с классом form-group-->
+            <div class="form-group">
+                <label for="email">Email</label>
+        <!--        form-control-изначально задаёт стили полю с растяжением на всю ширину блока/id-лучше добавить/placeholder-подсказка в полу-->
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+<!--                подсказка снизу-->
+                <p class="help-block">Help</p>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+        <!--        form-control-изначально задаёт стили полю с растяжением на всю ширину блока/id-лучше добавить/placeholder-подсказка в полу-->
+                <input type="password" class="form-control" id="password" placeholder="Enter password">
+            </div>
+
+              <div class="checkbox">
+<!--                  for почему-то не даёт назваться checkbox-->
+                <label for="password">
+        <!--        form-control-изначально задаёт стили полю с растяжением на всю ширину блока/id-лучше добавить/placeholder-подсказка в полу-->
+                    <input type="checkbox">Checkbox
+                </label>
+            </div>
+            <button type="button" class="btn btn-success">Registration</button>
+        </form>
+    </div>
+</body>
+</html>
