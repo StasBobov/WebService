@@ -8,10 +8,13 @@
     <p></p>
 <!--    если action пустой, то это означает, что обработка формы идёт на этой же странице/method="post"
 потому-что отправляем данные на сервер/(% csfr_token %) - всегда крепим при использовании метода post-->
-        <form action="" method="post">(% csfr_token %)
-<!--отображаем форму, как параграф-->
-            {{form.as_p}}
-            <!--as_p для того, чтобы каждый элемент формы был с новой строки-->
+        <form method="post">
+            {% csrf_token %}
+<!--            через цикл форма ровнее-->
+            {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}:</label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
 
             <button type="submit">Sing-up</button>
         </form>
